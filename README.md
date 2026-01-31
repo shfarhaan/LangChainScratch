@@ -1,10 +1,10 @@
-# LangChain Learning Guide: From Theory to Practice
+# LangChain & LangGraph Learning Guide: From Theory to Practice
 
 <div align="center">
 
-**A comprehensive, project-based learning repository for mastering LangChain**
+**A comprehensive, project-based learning repository for mastering LangChain, LangGraph, and LLM Technologies**
 
-*Learn to build powerful AI applications with LangChain through hands-on projects and in-depth tutorials*
+*Learn to build powerful AI applications with LangChain and LangGraph through hands-on projects and in-depth tutorials*
 
 </div>
 
@@ -27,15 +27,17 @@
 
 ## 🎯 Introduction
 
-Welcome to the ultimate LangChain learning repository! This guide is designed to take you from zero to hero in building AI-powered applications using LangChain. Whether you're a beginner or an experienced developer, you'll find structured tutorials, real-world projects, and best practices to master LangChain.
+Welcome to the ultimate LangChain and LangGraph learning repository! This guide is designed to take you from zero to hero in building AI-powered applications using LangChain, LangGraph, and related LLM technologies. Whether you're a beginner or an experienced developer, you'll find structured tutorials, real-world projects, and best practices to master these powerful frameworks.
 
 ### What You'll Learn
 
 - 🧠 **Core LangChain Concepts**: Models, Prompts, Chains, Agents, Memory
+- 🔄 **LangGraph Fundamentals**: State machines, cyclic graphs, agent workflows
 - 🔨 **Practical Implementation**: Build real-world applications step-by-step
 - 🚀 **Advanced Techniques**: RAG, Function Calling, Custom Tools, Streaming
 - 📊 **Best Practices**: Error handling, optimization, production deployment
 - 🎓 **Project-Based Learning**: Complete projects from simple to complex
+- 🌐 **Ecosystem Integration**: LangSmith, LangServe, and related tools
 
 ---
 
@@ -56,6 +58,24 @@ LangChain is a powerful framework for developing applications powered by languag
 3. **Production-Ready**: Built for scalable applications
 4. **Rich Ecosystem**: Extensive integrations and tools
 5. **Active Community**: Rapidly evolving with best practices
+
+## 🔄 What is LangGraph?
+
+LangGraph is a library for building stateful, multi-actor applications with LLMs. It extends LangChain with:
+
+- **State Management**: Built-in state persistence for complex workflows
+- **Cyclic Graphs**: Create loops and conditional branches in agent flows
+- **Multi-Agent Systems**: Coordinate multiple agents working together
+- **Human-in-the-Loop**: Easy integration of human feedback and approval
+- **Streaming Support**: Real-time updates for long-running operations
+
+### Why LangGraph?
+
+1. **Complex Workflows**: Handle sophisticated agent interactions
+2. **State Control**: Explicit control over agent state and memory
+3. **Flexibility**: Build both simple and complex agent architectures
+4. **Debugging**: Better visibility into agent decision-making
+5. **Production Scale**: Designed for reliable, stateful applications
 
 ---
 
@@ -190,7 +210,9 @@ LangChainScratch/
 │   ├── 05-agents-tools.md       # Agents and custom tools
 │   ├── 06-rag-vectorstores.md   # RAG implementation
 │   ├── 07-advanced-topics.md    # Advanced patterns
-│   └── 08-best-practices.md     # Production guidelines
+│   ├── 08-best-practices.md     # Production guidelines
+│   ├── 09-langgraph-intro.md    # LangGraph fundamentals
+│   └── QUICK_REFERENCE.md       # Quick reference guide
 │
 ├── notebooks/                    # Jupyter tutorials
 │   ├── 01_basic_llm_usage.ipynb
@@ -198,14 +220,16 @@ LangChainScratch/
 │   ├── 03_chains_demo.ipynb
 │   ├── 04_memory_systems.ipynb
 │   ├── 05_agents_tools.ipynb
-│   └── 06_rag_implementation.ipynb
+│   ├── 06_rag_implementation.ipynb
+│   └── 07_langgraph_basics.ipynb
 │
 ├── projects/                     # Hands-on projects
 │   ├── beginner/
-│   │   ├── simple_chatbot/
-│   │   ├── text_summarizer/
-│   │   └── qa_system/
+│   │   ├── simple_chatbot/      # ✅ Complete with code
+│   │   ├── text_summarizer/     # ✅ Complete with code
+│   │   └── qa_system/           # ✅ Complete with code (RAG)
 │   ├── intermediate/
+│   │   ├── langgraph_agent/     # ✅ Complete with code
 │   │   ├── document_qa/
 │   │   ├── web_scraper_chatbot/
 │   │   └── code_analyzer/
@@ -215,9 +239,10 @@ LangChainScratch/
 │       └── automated_workflow/
 │
 ├── examples/                     # Code snippets
-│   ├── basic_examples.py
+│   ├── basic_examples.py        # ✅ 10 working examples
 │   ├── chain_examples.py
 │   ├── agent_examples.py
+│   ├── langgraph_examples.py
 │   └── rag_examples.py
 │
 └── utils/                        # Helper utilities
@@ -279,67 +304,85 @@ Semantic search:
 - FAISS
 - Weaviate
 
+### 8. **LangGraph**
+Stateful, multi-actor applications:
+- State graphs with nodes and edges
+- Cyclic workflows and loops
+- Conditional branching
+- Multi-agent coordination
+- Human-in-the-loop integration
+
 ---
 
 ## 🛠️ Hands-On Projects
 
 ### Beginner Projects
 
-#### 1. Simple Chatbot
+#### 1. Simple Chatbot ✅
 Build a basic conversational AI with memory
 - **Skills**: LLMs, Prompts, Memory
 - **Duration**: 2-3 hours
+- **Status**: Complete with implementation
 - **[View Project](projects/beginner/simple_chatbot/)**
 
-#### 2. Text Summarizer
+#### 2. Text Summarizer ✅
 Create a document summarization tool
 - **Skills**: Chains, Document loaders
 - **Duration**: 2-3 hours
+- **Status**: Complete with implementation
 - **[View Project](projects/beginner/text_summarizer/)**
 
-#### 3. Q&A System
-Simple question-answering from text
-- **Skills**: Embeddings, Retrieval
+#### 3. Q&A System ✅
+Question-answering with RAG (Retrieval-Augmented Generation)
+- **Skills**: Embeddings, Retrieval, Vector Stores
 - **Duration**: 3-4 hours
+- **Status**: Complete with implementation
 - **[View Project](projects/beginner/qa_system/)**
 
 ### Intermediate Projects
 
-#### 4. Document Q&A with RAG
-Advanced question-answering with retrieval
-- **Skills**: RAG, Vector stores, Chains
+#### 4. LangGraph Agent ✅
+Build stateful agent workflows with LangGraph
+- **Skills**: LangGraph, State machines, Multi-step agents
+- **Duration**: 1-2 days
+- **Status**: Complete with implementation
+- **[View Project](projects/intermediate/langgraph_agent/)**
+
+#### 5. Document Q&A with Advanced RAG
+Enterprise-grade document Q&A system
+- **Skills**: Advanced RAG, Vector stores, Chains
 - **Duration**: 1-2 days
 - **[View Project](projects/intermediate/document_qa/)**
 
-#### 5. Web Scraper Chatbot
-Chat about web content
+#### 6. Web Scraper Chatbot
+Chat about web content in real-time
 - **Skills**: Web loaders, Agents, Tools
 - **Duration**: 1-2 days
 - **[View Project](projects/intermediate/web_scraper_chatbot/)**
 
-#### 6. Code Analyzer
-Analyze and explain code
+#### 7. Code Analyzer
+Analyze and explain code with AI
 - **Skills**: Custom parsers, Chains
 - **Duration**: 2-3 days
 - **[View Project](projects/intermediate/code_analyzer/)**
 
 ### Advanced Projects
 
-#### 7. Multi-Agent System
-Collaborative AI agents
-- **Skills**: Agents, Tools, Orchestration
+#### 8. Multi-Agent System
+Collaborative AI agents with LangGraph
+- **Skills**: LangGraph, Multi-agents, Coordination
 - **Duration**: 3-5 days
 - **[View Project](projects/advanced/multi_agent_system/)**
 
-#### 8. Research Assistant
-Autonomous research tool
-- **Skills**: Agents, RAG, Web search
+#### 9. Research Assistant
+Autonomous research tool with planning
+- **Skills**: Agents, RAG, Web search, LangGraph
 - **Duration**: 3-5 days
 - **[View Project](projects/advanced/research_assistant/)**
 
-#### 9. Automated Workflow
-End-to-end automation system
-- **Skills**: All concepts, Production
+#### 10. Automated Workflow
+End-to-end automation with state management
+- **Skills**: All concepts, Production, LangGraph
 - **Duration**: 5-7 days
 - **[View Project](projects/advanced/automated_workflow/)**
 
