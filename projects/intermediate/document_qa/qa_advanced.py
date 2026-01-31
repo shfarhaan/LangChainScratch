@@ -225,8 +225,7 @@ def main():
         os.makedirs("documents")
         
         # Create sample documents
-        sample1 = """RAG (Retrieval-Augmented Generation) is a technique that combines 
-information retrieval with language model generation. It works by:
+        sample1 = """RAG (Retrieval-Augmented Generation) is a technique that combines information retrieval with language model generation. It works by:
 1. Retrieving relevant documents from a knowledge base
 2. Using those documents as context for the language model
 3. Generating answers based on the retrieved information

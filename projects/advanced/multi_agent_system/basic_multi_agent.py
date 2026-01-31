@@ -96,7 +96,8 @@ def editor_agent(state: AgentState):
     llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.5)
     
     # Get latest review feedback
-    last_review = [m for m in state['messages'] if 'Review:' in m.content][-1].content
+    review_messages = [m for m in state['messages'] if 'Review:' in m.content]
+    last_review = review_messages[-1].content if review_messages else "No feedback available"
     
     prompt = f"""You are an editor.
 Original Content: {state['draft_content']}

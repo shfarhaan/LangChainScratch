@@ -114,7 +114,7 @@ def gather_information(sub_query, num_sources=5):
             loader = WebBaseLoader(url)
             docs = loader.load()
             documents.extend(docs)
-        except:
+        except Exception:
             continue
     
     return documents

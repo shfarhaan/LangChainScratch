@@ -26,7 +26,7 @@ def is_valid_url(url):
     try:
         result = urlparse(url)
         return all([result.scheme in ['http', 'https'], result.netloc])
-    except:
+    except Exception:
         return False
 
 

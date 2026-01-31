@@ -117,7 +117,15 @@ def main():
     
     # Extract sub-questions from plan
     lines = plan.split('\n')
-    sub_queries = [line.strip('0123456789. -') for line in lines if line.strip() and any(c.isdigit() for c in line[:5])][:3]
+    # Filter lines that look like numbered items and extract the text
+    sub_queries = []
+    for line in lines:
+        if line.strip() and any(c.isdigit() for c in line[:5]):
+            # Remove leading numbers and punctuation
+            import re
+            cleaned = re.sub(r'^\d+[\.\)\-\s]+', '', line.strip())
+            sub_queries.append(cleaned)
+    sub_queries = sub_queries[:3]  # Take first 3
     
     all_findings = []
     for i, sub_query in enumerate(sub_queries, 1):

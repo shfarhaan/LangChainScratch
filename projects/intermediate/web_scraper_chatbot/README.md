@@ -348,7 +348,7 @@ session.mount('https://', adapter)
 # Try lxml first, fall back to html.parser
 try:
     soup = BeautifulSoup(html, 'lxml')
-except:
+except Exception:
     soup = BeautifulSoup(html, 'html.parser')
 ```
 
