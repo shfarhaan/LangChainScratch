@@ -60,7 +60,7 @@ def planning_node(state: AgentState) -> dict:
     
     return {
         "plan": plan,
-        "messages": [f"Created plan with {len(plan.split('.'))} steps"],
+        "messages": ["Created plan successfully"],
         "step": "execute"
     }
 
