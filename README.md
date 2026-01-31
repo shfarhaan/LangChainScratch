@@ -118,8 +118,8 @@ prompt = PromptTemplate(
 chain = LLMChain(llm=llm, prompt=prompt)
 
 # Run the chain
-result = chain.run(topic="LangChain")
-print(result)
+result = chain.invoke({"topic": "LangChain"})
+print(result["text"])
 ```
 
 ---
